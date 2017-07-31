@@ -14,3 +14,18 @@ Test.run
 // Person(fred,25)
 
 ```
+
+`jackson-databind` has compile time dependencies on:
+
+* com.fasterxml.jackson.core » jackson-annotations
+* com.fasterxml.jackson.core » jackson-core
+
+`jackson-module-scala` has compile time dependencies on:
+* com.fasterxml.jackson.core » jackson-core
+* com.fasterxml.jackson.core » jackson-annotations
+* com.fasterxml.jackson.core » jackson-databind
+* com.fasterxml.jackson.module » jackson-module-paranamer
+* org.scala-lang » scala-library	
+* org.scala-lang » scala-reflect
+
+

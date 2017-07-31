@@ -7,6 +7,7 @@ import com.fasterxml.jackson.module.scala.DefaultScalaModule
 object Test {
 
   case class Person(name: String, age: Int)
+
   def run = {
     val person = Person("fred", 25)
     val mapper = new ObjectMapper()
@@ -22,8 +23,15 @@ object Test {
     val person2 = mapper.readValue(json, classOf[Person])
     println(person2)
   }
+
+  def testCantChangeThis = {
+    import com.databricks.support.java.jackson.databind.module.CantChangeThis
+    System.out.println(new CantChangeThis().value)
+  }
+
   def main(args: Array[String]): Unit = {
-  run
+    run
+    testCantChangeThis
   }
 
 }
