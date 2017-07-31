@@ -7,21 +7,25 @@
 * From the project directory:
   * `$ sbt assembly`
   * `$ sbt run` . This should print the following in the terminal:
-  ```{"name":"fred","age":25}
-Person(fred,25)
-com.fasterxml.jackson.databind.PropertyNamingStrategy$UpperCamelCaseStrategy@5ddd185e
-Hello World
-```
+  
+  ```
+  {"name":"fred","age":25}
+  
+  Person(fred,25)
+  
+  com.fasterxml.jackson.databind.PropertyNamingStrategy$UpperCamelCaseStrategy@5ddd185e
+  
+  Hello World
+  
+ ```
 * Upload the jar `./target/scala-2.11/shade-jackson-databind-1.0.jar` to Databricks and attach it to your cluster
-* Create a noteboo, attach it to the cluster containing the jar and run the following command:
+* Create a notebook, attach it to the cluster containing the jar and run the following command:
+
+
 ```scala
 import com.databricks.support.shade.jackson.databind.Test
 Test.run
-
-// it should print: 
-// {"name":"fred","age":25}
-// Person(fred,25)
-
+Test.testCantChangeThis // this works.
 ```
 
 ## Notes:
